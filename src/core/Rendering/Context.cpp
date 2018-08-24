@@ -1,7 +1,5 @@
 #include "Context.hpp"
 
-#include "../Common.hpp"
-
 #include <d3dx9math.h>
 
 #include <assert.h>

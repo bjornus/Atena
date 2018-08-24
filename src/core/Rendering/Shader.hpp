@@ -2,13 +2,15 @@
 
 #include "Context.hpp"
 
+#include "../Common.hpp"
+
 #include <d3d11.h>
 
 #include <string>
 
 namespace Atena
 {
-	class Shader
+	class ATENA_API Shader
 	{
 	public:
 		Shader(const std::string & filepath, Context * context);

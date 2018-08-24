@@ -2,8 +2,6 @@
 
 #include "Context.hpp"
 
-#include "../Common.hpp"
-
 namespace Atena
 {
 	Mesh::Mesh(const std::vector<Vertex> vertices, Context * context)

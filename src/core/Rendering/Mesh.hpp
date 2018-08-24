@@ -5,20 +5,32 @@
 
 #include <vector>
 
+#include "../Common.hpp"
+
 namespace Atena
 {
-	struct Vertex
+	struct Vec3
 	{
-		D3DXVECTOR3 position;
-		D3DXCOLOR color;
+		float x, y, z;
+	};
 
-		Vertex(const D3DXVECTOR3 & position, const D3DXCOLOR & color)
+	struct Color
+	{
+		float r, g, b, a;
+	};
+
+	struct ATENA_API Vertex
+	{
+		Vec3 position;
+		Color color;
+
+		Vertex(const Vec3 & position, const Color & color)
 			:position(position), color(color)
 		{}
 	};
 
 	class Context;
-	class Mesh
+	class ATENA_API Mesh
 	{
 	public:
 		Mesh(const std::vector<Vertex> vertices, Context * context);

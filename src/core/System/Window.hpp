@@ -2,11 +2,13 @@
 
 #include "../Rendering/Context.hpp"
 
+#include "../Common.hpp"
+
 #include <Windows.h>
 
 namespace Atena
 {
-	class Window
+	class ATENA_API Window
 	{
 	public:
 		Window(const int & width, const int & height);

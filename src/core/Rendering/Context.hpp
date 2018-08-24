@@ -2,9 +2,11 @@
 
 #include <d3d11.h>
 
+#include "../Common.hpp"
+
 namespace Atena
 {
-	class Context
+	class ATENA_API Context
 	{
 	public:
 		Context(HWND windowHandle, const int & width, const int & height, const bool & vSync = false, const bool & antialiasing = false);

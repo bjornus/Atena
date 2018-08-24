@@ -1,7 +1,5 @@
 #include "Shader.hpp"
 
-#include "../Common.hpp"
-
 #include <D3DX11async.h>
 
 namespace Atena
