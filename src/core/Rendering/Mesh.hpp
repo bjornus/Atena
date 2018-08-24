@@ -9,11 +9,11 @@ namespace Atena
 {
 	struct Vertex
 	{
-		float x, y, z;
+		D3DXVECTOR3 position;
 		D3DXCOLOR color;
 
-		Vertex(const float & x, const float & y, const float & z, const D3DXCOLOR & color)
-			:x(x), y(y), z(z), color(color)
+		Vertex(const D3DXVECTOR3 & position, const D3DXCOLOR & color)
+			:position(position), color(color)
 		{}
 	};
 
