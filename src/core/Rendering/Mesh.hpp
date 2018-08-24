@@ -5,8 +5,7 @@
 
 #include <vector>
 
-#include "../System/Math.hpp"
-
+#include "../Math.hpp"
 #include "../Common.hpp"
 
 namespace Atena
