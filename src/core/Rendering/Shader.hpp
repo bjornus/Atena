@@ -13,13 +13,11 @@ namespace Atena
 	class ATENA_API Shader
 	{
 	public:
-		Shader(const std::string & filepath, Context * context);
+		Shader(const std::string & filepath);
 		~Shader();
 
 		void bind();
 	private:
-		Context * context;
-
 		ID3D11VertexShader * vertexShader;
 		ID3D11PixelShader * pixelShader;
 	};

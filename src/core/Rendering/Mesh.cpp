@@ -2,10 +2,14 @@
 
 #include "Context.hpp"
 
+#include "../System/Window.hpp"
+
+#include <iostream>
+
 namespace Atena
 {
-	Mesh::Mesh(const std::vector<Vertex> vertices, Context * context)
-		:verticesCount(vertices.size()), context(context)
+	Mesh::Mesh(const std::vector<Vertex> vertices)
+		:verticesCount(vertices.size())
 	{
 		D3D11_BUFFER_DESC bufferDesc;
 		ZeroMemory(&bufferDesc, sizeof(bufferDesc));
@@ -14,12 +18,12 @@ namespace Atena
 		bufferDesc.BindFlags = D3D11_BIND_VERTEX_BUFFER;
 		bufferDesc.CPUAccessFlags = D3D11_CPU_ACCESS_WRITE;
 		
-		HR(context->device->CreateBuffer(&bufferDesc, NULL, &vertexBuffer));
+		HR(Window::getContext()->device->CreateBuffer(&bufferDesc, NULL, &vertexBuffer));
 
 		D3D11_MAPPED_SUBRESOURCE mappedSubresource;
-		HR(context->deviceContext->Map(vertexBuffer, NULL, D3D11_MAP_WRITE_DISCARD, NULL, &mappedSubresource));
+		HR(Window::getContext()->deviceContext->Map(vertexBuffer, NULL, D3D11_MAP_WRITE_DISCARD, NULL, &mappedSubresource));
 		memcpy(mappedSubresource.pData, &vertices[0], sizeof(Vertex) * vertices.size());
-		context->deviceContext->Unmap(vertexBuffer, NULL);
+		Window::getContext()->deviceContext->Unmap(vertexBuffer, NULL);
 	}
 
 	Mesh::~Mesh()
@@ -32,8 +36,8 @@ namespace Atena
 		UINT stride = sizeof(Vertex);
 		UINT offset = 0;
 		
-		context->deviceContext->IASetVertexBuffers(0, 1, &vertexBuffer, &stride, &offset);
-		context->deviceContext->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
-		context->deviceContext->Draw(verticesCount, 0);
+		Window::getContext()->deviceContext->IASetVertexBuffers(0, 1, &vertexBuffer, &stride, &offset);
+		Window::getContext()->deviceContext->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
+		Window::getContext()->deviceContext->Draw(verticesCount, 0);
 	}
 }

@@ -1,8 +1,9 @@
 #pragma once
 
+#include <DxErr.h>
+
 #if defined(DEBUG) | defined(_DEBUG)
 #ifndef HR
-/*
 #define HR(x)														\
 		{                                                           \
 			HRESULT hr = (x);                                       \
@@ -11,8 +12,6 @@
 				DXTrace(__FILE__, (DWORD)__LINE__, hr, L#x, true);  \
 			}                                                       \
 		}
-		*/
-#define HR(x) (x)
 #endif
 #else
 #ifndef HR

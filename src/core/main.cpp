@@ -9,13 +9,13 @@ int main()
 
 	std::vector<Atena::Vertex> vertices =
 	{
-		Atena::Vertex({0.0f, 0.5f, 0.0f}, {1.0f, 0.0f, 0.0f, 1.0f}),
-		Atena::Vertex({0.5, -0.5, 0.0f}, {0.0f, 1.0f, 0.0f, 1.0f}),
-		Atena::Vertex({-0.5, -0.5f, 0.0f}, {0.0f, 0.0f, 1.0f, 1.0f})
+		{ { 0.0f, 0.5f, 0.0f }, { 1.0f, 0.0f, 0.0f, 1.0f } },
+		{ { 0.5, -0.5, 0.0f }, { 0.0f, 1.0f, 0.0f, 1.0f } },
+		{ {-0.5, -0.5f, 0.0f }, { 0.0f, 0.0f, 1.0f, 1.0f }}
 	};
 
-	Atena::Mesh mesh(vertices, window.getContext());
-	Atena::Shader shader("shader.shader", window.getContext());
+	Atena::Mesh mesh(vertices);
+	Atena::Shader shader("shader.shader");
 	shader.bind();
 
 	while (!window.isClosed())

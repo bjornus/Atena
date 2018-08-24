@@ -14,6 +14,8 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 
 namespace Atena
 {
+	Context * Window::context = nullptr;
+
 	Window::Window(const int & width, const int & height)
 		:message({ 0 })
 	{
@@ -44,16 +46,11 @@ namespace Atena
 
 		ShowWindow(windowHandle, SW_SHOW);
 		UpdateWindow(windowHandle);
-		
+
 		context = new Context(windowHandle, width, height);
 	}
 
-	Window::~Window()
-	{
-		delete context;
-	}
-
-	bool Window::isClosed()
+	bool Window::isClosed() const
 	{
 		return message.message == WM_QUIT;
 	}
@@ -68,10 +65,5 @@ namespace Atena
 			return true;
 		}
 		return false;
-	}
-
-	Context * Window::getContext()
-	{
-		return context;
 	}
 }

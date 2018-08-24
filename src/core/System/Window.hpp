@@ -12,14 +12,13 @@ namespace Atena
 	{
 	public:
 		Window(const int & width, const int & height);
-		~Window();
 
-		bool isClosed();
+		bool isClosed() const;
 		bool pollEvents();
 
-		Context * getContext();
+		static Context * getContext() { return context; };
 	private:
+		static Context * context;
 		MSG message;
-		Context * context;
 	};
 }
