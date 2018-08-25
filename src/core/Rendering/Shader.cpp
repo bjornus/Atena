@@ -4,7 +4,7 @@
 
 #include <D3DX11async.h>
 
-namespace Atena
+namespace Vawel
 {
 	Shader::Shader(const std::string & filepath)
 	{

@@ -2,19 +2,19 @@
 
 #include "Common.hpp"
 
-namespace Atena
+namespace Vawel
 {
-	struct ATENA_API Vector3
+	struct VAWEL_API Vector3
 	{
 		float x, y, z;
 	};
 
-	struct ATENA_API Color
+	struct VAWEL_API Color
 	{
 		float r, g, b, a;
 	};
 
-	struct ATENA_API Vertex
+	struct VAWEL_API Vertex
 	{
 		Vector3 position;
 		Color color;

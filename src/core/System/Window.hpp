@@ -6,9 +6,9 @@
 
 #include <Windows.h>
 
-namespace Atena
+namespace Vawel
 {
-	class ATENA_API Window
+	class VAWEL_API Window
 	{
 	public:
 		Window(const int & width, const int & height);

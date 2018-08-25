@@ -6,7 +6,7 @@
 
 #include <iostream>
 
-namespace Atena
+namespace Vawel
 {
 	Mesh::Mesh(const std::vector<Vertex> & vertices, const std::vector<unsigned int> & indices)
 		:indicesCount(indices.size())

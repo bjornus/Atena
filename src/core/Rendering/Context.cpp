@@ -4,7 +4,7 @@
 
 #include <assert.h>
 
-namespace Atena
+namespace Vawel
 {
 	Context::Context(HWND windowHandle, const int & width, const int & height, const bool & vSync, const bool & antialiasing)
 		:vSync(vSync), antialiasing(antialiasing)

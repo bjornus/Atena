@@ -8,10 +8,10 @@
 #include "../Math.hpp"
 #include "../Common.hpp"
 
-namespace Atena
+namespace Vawel
 {
 	class Context;
-	class ATENA_API Mesh
+	class VAWEL_API Mesh
 	{
 	public:
 		Mesh(const std::vector<Vertex> & vertices, const std::vector<unsigned int> & indices);

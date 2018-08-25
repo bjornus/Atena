@@ -8,9 +8,9 @@
 
 #include <string>
 
-namespace Atena
+namespace Vawel
 {
-	class ATENA_API Shader
+	class VAWEL_API Shader
 	{
 	public:
 		Shader(const std::string & filepath);

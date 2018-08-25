@@ -19,4 +19,4 @@
 #endif
 #endif
 
-#define ATENA_API __declspec(dllexport)
+#define VAWEL_API __declspec(dllexport)

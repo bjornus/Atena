@@ -3,24 +3,28 @@
 #include "Rendering/Mesh.hpp"
 #include "Rendering/Shader.hpp"
 
+using namespace Vawel;
+
 int main()
 {
-	Atena::Window window(800, 600);
+	Window window(800, 600);
 
-	std::vector<Atena::Vertex> vertices =
+	std::vector<Vertex> vertices =
 	{
-		{ { 0.0f, 0.5f, 0.0f }, { 1.0f, 0.0f, 0.0f, 1.0f } },
-		{ { 0.5, -0.5, 0.0f }, { 0.0f, 1.0f, 0.0f, 1.0f } },
-		{ {-0.5, -0.5f, 0.0f }, { 0.0f, 0.0f, 1.0f, 1.0f }}
+		{ { -0.5f, 0.5f, 0.0f }, { 1.0f, 0.0f, 0.0f, 1.0f } },
+		{ { 0.5, 0.5, 0.0f }, { 0.0f, 1.0f, 0.0f, 1.0f } },
+		{ { -0.5, -0.5f, 0.0f }, { 0.0f, 0.0f, 1.0f, 1.0f } },
+		{ { 0.5, -0.5f, 0.0f }, { 1.0f, 0.0f, 1.0f, 1.0f } }
 	};
 
 	std::vector<unsigned int> indices =
 	{
-		0, 1, 2
+		0, 1, 2,
+		2, 1, 3
 	};
 
-	Atena::Mesh mesh(vertices, indices);
-	Atena::Shader shader("shader.shader");
+	Mesh mesh(vertices, indices);
+	Shader shader("shader.shader");
 	shader.bind();
 
 	while (!window.isClosed())

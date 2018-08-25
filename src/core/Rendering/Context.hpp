@@ -4,9 +4,9 @@
 
 #include "../Common.hpp"
 
-namespace Atena
+namespace Vawel
 {
-	class ATENA_API Context
+	class VAWEL_API Context
 	{
 	public:
 		Context(HWND windowHandle, const int & width, const int & height, const bool & vSync = false, const bool & antialiasing = false);
