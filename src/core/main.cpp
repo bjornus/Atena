@@ -14,7 +14,12 @@ int main()
 		{ {-0.5, -0.5f, 0.0f }, { 0.0f, 0.0f, 1.0f, 1.0f }}
 	};
 
-	Atena::Mesh mesh(vertices);
+	std::vector<unsigned int> indices =
+	{
+		0, 1, 2
+	};
+
+	Atena::Mesh mesh(vertices, indices);
 	Atena::Shader shader("shader.shader");
 	shader.bind();
 

@@ -14,14 +14,14 @@ namespace Atena
 	class ATENA_API Mesh
 	{
 	public:
-		Mesh(const std::vector<Vertex> vertices);
+		Mesh(const std::vector<Vertex> & vertices, const std::vector<unsigned int> & indices);
 		~Mesh();
 
 		void draw();
 	private:
 		ID3D11Buffer * vertexBuffer;
-		ID3D11InputLayout * layout;
-
-		int verticesCount;
+		ID3D11Buffer * indexBuffer;
+		
+		int indicesCount;
 	};
 }
