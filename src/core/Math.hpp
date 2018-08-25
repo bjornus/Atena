@@ -2,19 +2,19 @@
 
 #include "Common.hpp"
 
-namespace Vawel
+namespace Wawel
 {
-	struct VAWEL_API Vector3
+	struct WAWEL_API Vector3
 	{
 		float x, y, z;
 	};
 
-	struct VAWEL_API Color
+	struct WAWEL_API Color
 	{
 		float r, g, b, a;
 	};
 
-	struct VAWEL_API Vertex
+	struct WAWEL_API Vertex
 	{
 		Vector3 position;
 		Color color;

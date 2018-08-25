@@ -4,7 +4,7 @@
 
 #include <assert.h>
 
-namespace Vawel
+namespace Wawel
 {
 	Context::Context(HWND windowHandle, const int & width, const int & height, const bool & vSync, const bool & antialiasing)
 		:vSync(vSync), antialiasing(antialiasing)

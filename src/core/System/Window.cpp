@@ -12,7 +12,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 	return DefWindowProc(hWnd, msg, wParam, lParam);
 }
 
-namespace Vawel
+namespace Wawel
 {
 	Context * Window::context = nullptr;
 
@@ -38,7 +38,7 @@ namespace Vawel
 			MessageBox(0, L"Window class registration error", L"ERROR", 0);
 		}
 
-		HWND windowHandle = CreateWindow(L"Window", L"Atena Engine", WS_SYSMENU, CW_USEDEFAULT, CW_USEDEFAULT, width, height, 0, 0, hInstance, 0);
+		HWND windowHandle = CreateWindow(L"Window", L"Wawel", WS_SYSMENU, CW_USEDEFAULT, CW_USEDEFAULT, width, height, 0, 0, hInstance, 0);
 		if (!windowHandle)
 		{
 			MessageBox(0, L"Window creation error", L"ERROR", 0);

@@ -3,7 +3,7 @@
 #include "Rendering/Mesh.hpp"
 #include "Rendering/Shader.hpp"
 
-using namespace Vawel;
+using namespace Wawel;
 
 int main()
 {

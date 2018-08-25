@@ -8,10 +8,10 @@
 #include "../Math.hpp"
 #include "../Common.hpp"
 
-namespace Vawel
+namespace Wawel
 {
 	class Context;
-	class VAWEL_API Mesh
+	class WAWEL_API Mesh
 	{
 	public:
 		Mesh(const std::vector<Vertex> & vertices, const std::vector<unsigned int> & indices);

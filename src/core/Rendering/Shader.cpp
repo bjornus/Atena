@@ -4,7 +4,7 @@
 
 #include <D3DX11async.h>
 
-namespace Vawel
+namespace Wawel
 {
 	Shader::Shader(const std::string & filepath)
 	{

@@ -6,7 +6,7 @@
 
 #include <iostream>
 
-namespace Vawel
+namespace Wawel
 {
 	Mesh::Mesh(const std::vector<Vertex> & vertices, const std::vector<unsigned int> & indices)
 		:indicesCount(indices.size())

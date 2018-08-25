@@ -19,4 +19,4 @@
 #endif
 #endif
 
-#define VAWEL_API __declspec(dllexport)
+#define WAWEL_API __declspec(dllexport)

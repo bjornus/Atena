@@ -8,9 +8,9 @@
 
 #include <string>
 
-namespace Vawel
+namespace Wawel
 {
-	class VAWEL_API Shader
+	class WAWEL_API Shader
 	{
 	public:
 		Shader(const std::string & filepath);

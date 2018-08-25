@@ -4,9 +4,9 @@
 
 #include "../Common.hpp"
 
-namespace Vawel
+namespace Wawel
 {
-	class VAWEL_API Context
+	class WAWEL_API Context
 	{
 	public:
 		Context(HWND windowHandle, const int & width, const int & height, const bool & vSync = false, const bool & antialiasing = false);

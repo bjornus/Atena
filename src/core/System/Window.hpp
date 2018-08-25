@@ -6,9 +6,9 @@
 
 #include <Windows.h>
 
-namespace Vawel
+namespace Wawel
 {
-	class VAWEL_API Window
+	class WAWEL_API Window
 	{
 	public:
 		Window(const int & width, const int & height);
