@@ -20,11 +20,9 @@ namespace Atena
 			{ "POSITION", 0, DXGI_FORMAT_R32G32B32_FLOAT, 0, 0, D3D11_INPUT_PER_VERTEX_DATA, 0 },
 			{ "COLOR", 0, DXGI_FORMAT_R32G32B32A32_FLOAT, 0, 12, D3D11_INPUT_PER_VERTEX_DATA, 0 },
 		};
-		ID3D11InputLayout * layout;
+		
 		HR(Window::getContext()->device->CreateInputLayout(inputElementDesc, 2, vertexShaderBlob->GetBufferPointer(), vertexShaderBlob->GetBufferSize(), &layout));
-		Window::getContext()->deviceContext->IASetInputLayout(layout);
-
-		layout->Release();
+		
 		vertexShaderBlob->Release();
 		pixelShaderBlob->Release();
 	}
@@ -33,10 +31,12 @@ namespace Atena
 	{
 		vertexShader->Release();
 		pixelShader->Release();
+		layout->Release();
 	}
 
 	void Shader::bind()
 	{
+		Window::getContext()->deviceContext->IASetInputLayout(layout);
 		Window::getContext()->deviceContext->VSSetShader(vertexShader, 0, 0);
 		Window::getContext()->deviceContext->PSSetShader(pixelShader, 0, 0);
 	}
