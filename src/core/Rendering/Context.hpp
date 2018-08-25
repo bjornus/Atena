@@ -9,7 +9,6 @@ namespace Atena
 	class ATENA_API Context
 	{
 	public:
-		Context() = default;
 		Context(HWND windowHandle, const int & width, const int & height, const bool & vSync = false, const bool & antialiasing = false);
 		~Context();
 

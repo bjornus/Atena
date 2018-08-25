@@ -13,17 +13,14 @@ namespace Atena
 	{
 		D3D11_BUFFER_DESC bufferDesc;
 		ZeroMemory(&bufferDesc, sizeof(bufferDesc));
-		bufferDesc.Usage = D3D11_USAGE_DYNAMIC;
-		bufferDesc.ByteWidth = sizeof(Vertex) * 3;
+		bufferDesc.Usage = D3D11_USAGE_IMMUTABLE;
+		bufferDesc.ByteWidth = sizeof(Vertex) * vertices.size();
 		bufferDesc.BindFlags = D3D11_BIND_VERTEX_BUFFER;
-		bufferDesc.CPUAccessFlags = D3D11_CPU_ACCESS_WRITE;
-		
-		HR(Window::getContext()->device->CreateBuffer(&bufferDesc, NULL, &vertexBuffer));
 
-		D3D11_MAPPED_SUBRESOURCE mappedSubresource;
-		HR(Window::getContext()->deviceContext->Map(vertexBuffer, NULL, D3D11_MAP_WRITE_DISCARD, NULL, &mappedSubresource));
-		memcpy(mappedSubresource.pData, &vertices[0], sizeof(Vertex) * vertices.size());
-		Window::getContext()->deviceContext->Unmap(vertexBuffer, NULL);
+		D3D11_SUBRESOURCE_DATA subresourceData;
+		subresourceData.pSysMem = &vertices[0];
+
+		HR(Window::getContext()->device->CreateBuffer(&bufferDesc, &subresourceData, &vertexBuffer));
 	}
 
 	Mesh::~Mesh()
